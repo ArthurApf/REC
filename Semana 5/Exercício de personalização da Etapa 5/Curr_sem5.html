@@ -1,80 +1,107 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <script src="Curriculo_sem5.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script src="Curriculo_sem5.js" type="module"></script>
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script>
+            function disc(){
+                let w = document.getElementById("word")
+                w.innerHTML="Esse é meu curriculo, para contato cel:(11)999149848"
+            }
 
-</head>
-<body style="background-color: whitesmoke   ">
-    <div class="containder-fluid">    
-        <div class="header row p-2" id="header">    
-            <h1>Arthur Prado Fraige</h1>
-            <h6>Meu Curriculo Personalizado</h6>
+            function some(){
+                let a = document.getElementById("foto")
+                $(a).fadeOut("500000000");
+            }
+
+            function load(){
+                var text = ''
+                var i = 0
+                var url = "http://127.0.0.1:5500/end1";
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET", url, false);
+                xhttp.send();
+                var tab = JSON.parse(xhttp.responseText);
+                console.log(tab)
+            }
+
+
+        </script>
+
+
+    </head>
+    <body style="background-color: whitesmoke">
+        <div class="containder-fluid">    
+            <div class="header row p-2" id="header">    
+                <h1>Arthur Prado Fraige</h1>
+                <h6>Meu Curriculo Personalizado</h6>
+                
+            </div>
+            <button style="width: 90px; height: 90px; border-radius: 10px;" onclick="some()">Esconder foto</button>
+            <div class="col d-flex justify-content-center">
+                <img src="perfil.jpg" width="200px" height="200px" style="border-radius:12px" id="foto">
+                <a href="https://www.linkedin.com/in/arthur-fraige/"><button id="butt" style="background-color: rgb(58, 79, 120);">Linkedin</button></a>
+                <a href="https://twitter.com/ArthurApf"><button id="butt" style="background-color:rgb(52, 165, 182);">Twitter</button></a>
+                <a href="https://www.instagram.com/arthurapf1/"><button id="butt" style="background-color:rgb(255, 76, 183)">Instagram</button></a>
+                <button id="word" class="but3" onclick="disc()">Clique</button>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="col-2" id="midscreen">
+                    Sobre mim
+                    <div id="inform">
+                        19 anos <br>
+                        Engenharia da computação <br>
+                        Estudante do Inteli <br>    
+                        Membro da CE Inteli
+                    </div>
+                </div> 
+                <div class="col-2" id="midscreen">
+                    Formações
+                    <div id="inform">
+                        HTML5 pelo Alura <br>
+                        CSS3 pelo Alura <br>
+                        JavaScript Basico pelo Alura <br>
+                        EC - Inteli (2022-2025)
+                    </div>
+                </div>
+                <div class="col-2" id="midscreen">
+                    Preferencias
+                    <div id="inform">
+                        Web design <br>
+                        Marketing digital <br>
+                        Mercado Financeiro <br>    
+                        Cloud
+                    </div>
+                </div>
+                <div class="col-2" id="midscreen">
+                    Meus projetos
+                    <div id="inform">
+                        CE Inteli <br>
+                        Projetos do Inteli <br>
+                    </div>
+                </div>
+                <div class="col-2" id="midscreen">
+                    Curiosidades
+                    <div id="inform">
+                        Tenho paixão por cinema<br>
+                        Entusiasta de eSports <br>
+                        Tenho familiares na area de tech <br>    
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col" id="footer">
+                Minhas skills
+                <div id="inform">
+                    Inglês, Espanhol, Photoshop, Marketing Digital, Analise Social
+                </div>
+            </div>
             
         </div>
-        <button style="width: 90px; height: 90px; border-radius: 10px;" onclick="some()">Esconder foto</button>
-        <div class="col d-flex justify-content-center">
-            <img src="perfil.jpg" width="200px" height="200px" style="border-radius:12px" id="foto">
-            <a href="https://www.linkedin.com/in/arthur-fraige/"><button id="butt" style="background-color: rgb(58, 79, 120);">Linkedin</button></a>
-            <a href="https://twitter.com/ArthurApf"><button id="butt" style="background-color:rgb(52, 165, 182);">Twitter</button></a>
-            <a href="https://www.instagram.com/arthurapf1/"><button id="butt" style="background-color:rgb(255, 76, 183)">Instagram</button></a>
-            <button id="word" class="but3" onclick="disc()">Clique</button>
-        </div>
-        <div class="d-flex justify-content-center">
-            <div class="col-2" id="midscreen">
-                Sobre mim
-                <div id="inform">
-                    19 anos <br>
-                    Engenharia da computação <br>
-                    Estudante do Inteli <br>    
-                    Membro da CE Inteli
-                </div>
-            </div> 
-            <div class="col-2" id="midscreen">
-                Formações
-                <div id="inform">
-                    HTML5 pelo Alura <br>
-                    CSS3 pelo Alura <br>
-                    JavaScript Basico pelo Alura <br>
-                    EC - Inteli (2022-2025)
-                </div>
-            </div>
-            <div class="col-2" id="midscreen">
-                Preferencias
-                <div id="inform">
-                    Web design <br>
-                    Marketing digital <br>
-                    Mercado Financeiro <br>    
-                    Cloud
-                </div>
-            </div>
-            <div class="col-2" id="midscreen">
-                Meus projetos
-                <div id="inform">
-                    CE Inteli <br>
-                    Projetos do Inteli <br>
-                </div>
-            </div>
-            <div class="col-2" id="midscreen">
-                Curiosidades
-                <div id="inform">
-                    Tenho paixão por cinema<br>
-                    Entusiasta de eSports <br>
-                    Tenho familiares na area de tech <br>    
-                </div>
-            </div>
-        </div>
         
-        <div class="col" id="footer">
-            Minhas skills
-            <div id="inform">
-                Inglês, Espanhol, Photoshop, Marketing Digital, Analise Social
-            </div>
-        </div>
         
-    </div>
-    
-    
-</body>
+    </body>
+</html>
